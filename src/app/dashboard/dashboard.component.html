@@ -1,0 +1,31 @@
+<mat-drawer-container class="example-container" autosize>
+  <!-- SIDEBAR -->
+  <mat-drawer mode="over" #drawer class="example-sidenav" mode="side">
+    <ul>
+      <li>
+        <a href="">Inicio</a>
+      </li>
+    </ul>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+
+    <mat-toolbar color="primary">
+      <button
+        (click)="drawer.toggle()"
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>My App</span>
+    </mat-toolbar>
+
+    <main class="p-3">
+
+      <button (click)="showPage = !showPage">Alternar pagina</button>
+      <app-users *ngIf="showPage"></app-users>
+    </main>
+  </div>
+</mat-drawer-container>
